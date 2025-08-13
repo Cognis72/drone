@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- 
+    README: How to modify this e-commerce microsite
+    
+    1. To change prices/tiers: Edit PRODUCT.basePrice and PRODUCT.tiers array in app.js
+    2. To update translations: Modify the I18N object in app.js
+    3. To change product options: Update PRODUCT.options in app.js
+    4. To modify content: Update the respective sections below and their translations
+    
+    This is a frontend-only e-commerce site with COD support and bilingual functionality.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="พัดลมเครื่องบินโดรน - เย็นได้ทุกที่ ด้วยพลังใบพัดแบบโดรน ลมแรง เงียบ ส่งฟรีทั่วประเทศ">
+    <title>AeroCool - พัดลมเครื่องบินโดรน | Drone Air Propeller Fan</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AeroCool - พัดลมเครื่องบินโดรน">
+    <meta property="og:description" content="เย็นได้ทุกที่ ด้วยพลังใบพัดแบบโดรน ลมแรง เงียบ ส่งฟรีทั่วประเทศ">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AeroCool - พัดลมเครื่องบินโดรน">
+    <meta name="twitter:description" content="เย็นได้ทุกที่ ด้วยพลังใบพัดแบบโดรน ลมแรง เงียบ ส่งฟรีทั่วประเทศ">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>AeroCool</h1>
+                </div>
+                
+                <nav class="nav" role="navigation">
+                    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="#home" data-translate="nav.home">หน้าแรก</a></li>
+                        <li><a href="#features" data-translate="nav.features">คุณสมบัติ</a></li>
+                        <li><a href="#reviews" data-translate="nav.reviews">รีวิว</a></li>
+                        <li><a href="#faq" data-translate="nav.faq">คำถามที่พบบ่อย</a></li>
+                        <li><a href="#contact" data-translate="nav.contact">ติดต่อ</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-toggle">
+                        <button class="lang-btn active" data-lang="th" aria-label="Switch to Thai">TH</button>
+                        <span>|</span>
+                        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                    </div>
+                    
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    
+                    <button class="cart-btn" aria-label="Shopping cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 9.5 2L21 7H7"></path>
+                        </svg>
+                        <span class="cart-count" aria-live="polite">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="badge free-shipping-badge">
+                            <span data-translate="freeShipping">ส่งฟรี</span>
+                        </div>
+                        <h2 class="hero-title" data-translate="hero.title">เย็นได้ทุกที่ ด้วยพลังใบพัดแบบโดรน</h2>
+                        <p class="hero-subtitle" data-translate="hero.subtitle">ลมแรง เงียบ ส่งฟรีทั่วประเทศ</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-large" data-translate="buyNow">ซื้อเลย</button>
+                            <div class="shipping-info">
+                                <span data-translate="deliveryTime">ส่งภายใน 1–3 วันทำการ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/placeholder-drone-fan.svg" alt="Drone Air Propeller Fan" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details -->
+        <section id="product" class="product-section">
+            <div class="container">
+                <div class="product-grid">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="main-product-image" src="assets/placeholder-drone-fan.svg" alt="Drone Air Propeller Fan">
+                        </div>
+                        <div class="thumbnail-list">
+                            <button class="thumbnail active">
+                                <img src="assets/placeholder-drone-fan.svg" alt="Front view">
+                            </button>
+                            <button class="thumbnail">
+                                <img src="assets/placeholder-drone-fan.svg" alt="Side view">
+                            </button>
+                            <button class="thumbnail">
+                                <img src="assets/placeholder-drone-fan.svg" alt="Back view">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <h1 class="product-title" data-translate="product.name">พัดลมเครื่องบินโดรน</h1>
+                        
+                        <div class="price-section">
+                            <div class="current-price">
+                                <span class="currency">฿</span>
+                                <span class="amount" id="current-unit-price">1,290</span>
+                                <span class="unit" data-translate="perUnit">ต่อชิ้น</span>
+                            </div>
+                            <div class="price-note" data-translate="priceNote">ราคาจะลดลงเมื่อซื้อหลายชิ้น</div>
+                        </div>
+
+                        <!-- Tiered Pricing Table -->
+                        <div class="pricing-table">
+                            <h3 data-translate="bulkPricing">ราคาซื้อหลายชิ้น</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th data-translate="quantity">จำนวน</th>
+                                        <th data-translate="unitPrice">ราคาต่อชิ้น</th>
+                                        <th data-translate="savings">ประหยัด</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1 <span data-translate="piece">ชิ้น</span></td>
+                                        <td>฿1,290</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2-3 <span data-translate="pieces">ชิ้น</span></td>
+                                        <td>฿1,190</td>
+                                        <td class="savings">฿100/<span data-translate="piece">ชิ้น</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4+ <span data-translate="pieces">ชิ้น</span></td>
+                                        <td>฿1,090</td>
+                                        <td class="savings">฿200/<span data-translate="piece">ชิ้น</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Product Options -->
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="color-select" data-translate="color">สี:</label>
+                                <select id="color-select" name="color">
+                                    <option value="Black" data-translate="colorBlack">ดำ</option>
+                                    <option value="White" data-translate="colorWhite">ขาว</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label for="size-select" data-translate="size">ขนาด:</label>
+                                <select id="size-select" name="size">
+                                    <option value="5&quot;">5"</option>
+                                    <option value="7&quot;">7"</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Quantity and Add to Cart -->
+                        <div class="purchase-section">
+                            <div class="quantity-section">
+                                <label for="quantity" data-translate="quantity">จำนวน:</label>
+                                <div class="quantity-controls">
+                                    <button class="qty-btn" data-action="decrease" aria-label="Decrease quantity">-</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="99" aria-label="Quantity">
+                                    <button class="qty-btn" data-action="increase" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-large add-to-cart-btn" data-translate="addToCart">
+                                เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <div class="badge">
+                                <span data-translate="secureCheckout">ชำระเงินปลอดภัย</span>
+                            </div>
+                            <div class="badge">
+                                <span data-translate="codAvailable">รับ COD</span>
+                            </div>
+                            <div class="badge">
+                                <span data-translate="warranty">รับประกัน 2 ปี</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Specs -->
+                        <div class="product-specs">
+                            <h3 data-translate="specifications">ข้อมูลจำเพาะ</h3>
+                            <ul>
+                                <li><span data-translate="spec.motor">มอเตอร์:</span> <span data-translate="spec.motorValue">Brushless DC Motor</span></li>
+                                <li><span data-translate="spec.noise">ระดับเสียง:</span> <span data-translate="spec.noiseValue">&lt; 35dB</span></li>
+                                <li><span data-translate="spec.battery">แบตเตอรี่:</span> <span data-translate="spec.batteryValue">Li-ion 2000mAh</span></li>
+                                <li><span data-translate="spec.runtime">เวลาใช้งาน:</span> <span data-translate="spec.runtimeValue">8-12 ชั่วโมง</span></li>
+                                <li><span data-translate="spec.weight">น้ำหนัก:</span> <span data-translate="spec.weightValue">450g</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title" data-translate="features.title">คุณสมบัติเด่น</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="features.quiet.title">เสียงเงียบ</h3>
+                        <p data-translate="features.quiet.desc">เทคโนโลยีใบพัดแบบโดรน ทำงานเงียบต่ำกว่า 35dB</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <h3 data-translate="features.battery.title">แบตเตอรี่ยาวนาน</h3>
+                        <p data-translate="features.battery.desc">ใช้งานต่อเนื่องได้ 8-12 ชั่วโมง ชาร์จเร็วด้วย USB-C</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 data-translate="features.safe.title">ปลอดภัย</h3>
+                        <p data-translate="features.safe.desc">ใบพัดนิรภัย หยุดทำงานเมื่อมีสิ่งกีดขวาง</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+                                <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="features.warranty.title">รับประกัน 2 ปี</h3>
+                        <p data-translate="features.warranty.desc">รับประกันคุณภาพสินค้า พร้อมบริการหลังการขาย</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2 class="section-title" data-translate="reviews.title">รีวิวจากลูกค้า</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p data-translate="reviews.review1">"เงียบมาก ลมแรงดี ใช้ได้นานจริงๆ คุ้มค่ามาก"</p>
+                        <div class="reviewer">- <span data-translate="reviews.reviewer1">สุชาติ ก.</span></div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p data-translate="reviews.review2">"ส่งเร็วมาก บรรจุภัณฑ์ดี สินค้าตรงตามที่โฆษณา"</p>
+                        <div class="reviewer">- <span data-translate="reviews.reviewer2">มาลี ส.</span></div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p data-translate="reviews.review3">"ซื้อมา 3 เครื่อง ราคาถูกลงเยอะ พอใจมาก"</p>
+                        <div class="reviewer">- <span data-translate="reviews.reviewer3">ประยุทธ์ ท.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title" data-translate="faq.title">คำถามที่พบบ่อย</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q1">รับ COD ไหม?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a1">รับค่ะ เราให้บริการเก็บเงินปลายทาง (COD) ทั่วประเทศ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q2">รับประกันกี่ปี?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a2">รับประกันสินค้า 2 ปีเต็ม พร้อมบริการซ่อมและเปลี่ยนชิ้นส่วน</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q3">ส่งฟรีจริงไหม?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a3">ส่งฟรีทั่วประเทศไทยค่ะ ไม่มีเงื่อนไขขั้นต่ำ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q4">ส่งกี่วัน?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a4">ส่งภายใน 1-3 วันทำการ ขึ้นอยู่กับพื้นที่</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q5">คืนสินค้าได้ไหม?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a5">คืนได้ภายใน 7 วัน หากสินค้าชำรุดหรือไม่ตรงตามที่สั่ง</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span data-translate="faq.q6">มีบริการหลังการขายไหม?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p data-translate="faq.a6">มีค่ะ สามารถติดต่อทาง LINE หรือโทรหาเราได้ตลอด</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title" data-translate="contact.title">ติดต่อเรา</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3 data-translate="contact.line">LINE Official</h3>
+                            <p>@aerocool-th</p>
+                            <div class="qr-placeholder">[QR Code Placeholder]</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3 data-translate="contact.phone">โทรศัพท์</h3>
+                            <p>02-123-4567</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3 data-translate="contact.email">อีเมล</h3>
+                            <p>info@aerocool.co.th</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3 data-translate="contact.address">ที่อยู่</h3>
+                            <p data-translate="contact.addressValue">123 ถนนพหลโยธิน แขวงลาดยาว เขตจตุจักร กรุงเทพฯ 10900</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3 data-translate="contact.social">ติดตามเรา</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-translate="cart.title">ตะกร้าสินค้า</h3>
+            <button class="close-cart" aria-label="Close cart">&times;</button>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </div>
+            
+            <div class="cart-empty" id="cart-empty" style="display: none;">
+                <p data-translate="cart.empty">ตะกร้าสินค้าว่างเปล่า</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <div class="subtotal">
+                    <span data-translate="cart.subtotal">รวม:</span>
+                    <span id="cart-subtotal">฿0</span>
+                </div>
+                <div class="shipping">
+                    <span data-translate="cart.shipping">ค่าส่ง:</span>
+                    <span class="free" data-translate="cart.free">ฟรี</span>
+                </div>
+                <div class="total">
+                    <span data-translate="cart.total">ยอดรวม:</span>
+                    <span id="cart-total">฿0</span>
+                </div>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn" data-translate="cart.checkout">สั่งซื้อ</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-translate="checkout.title">สั่งซื้อสินค้า</h2>
+                <button class="close-modal" aria-label="Close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="checkout-form" novalidate>
+                    <div class="form-section">
+                        <h3 data-translate="checkout.customerInfo">ข้อมูลลูกค้า</h3>
+                        
+                        <div class="form-group">
+                            <label for="customer-name" data-translate="checkout.name">ชื่อ-นามสกุล *</label>
+                            <input type="text" id="customer-name" name="name" required>
+                            <div class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customer-phone" data-translate="checkout.phone">เบอร์โทรศัพท์ *</label>
+                            <input type="tel" id="customer-phone" name="phone" placeholder="08X-XXX-XXXX" required>
+                            <div class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customer-email" data-translate="checkout.email">อีเมล</label>
+                            <input type="email" id="customer-email" name="email">
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 data-translate="checkout.shippingInfo">ที่อยู่จัดส่ง</h3>
+                        
+                        <div class="form-group">
+                            <label for="address" data-translate="checkout.address">ที่อยู่ *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                            <div class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="province" data-translate="checkout.province">จังหวัด *</label>
+                                <input type="text" id="province" name="province" required>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="postcode" data-translate="checkout.postcode">รหัสไปรษณีย์ *</label>
+                                <input type="text" id="postcode" name="postcode" pattern="[0-9]{5}" required>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="delivery-notes" data-translate="checkout.notes">หมายเหตุการจัดส่ง</label>
+                            <textarea id="delivery-notes" name="notes" rows="2"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 data-translate="checkout.payment">วิธีชำระเงิน</h3>
+                        
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <span class="checkmark"></span>
+                                <span data-translate="checkout.cod">เก็บเงินปลายทาง (COD)</span>
+                            </label>
+                            <p class="payment-note" data-translate="checkout.codNote">ชำระเงินเมื่อได้รับสินค้า</p>
+                            
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="transfer">
+                                <span class="checkmark"></span>
+                                <span data-translate="checkout.transfer">โอนเงิน</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3 data-translate="checkout.orderSummary">สรุปคำสั่งซื้อ</h3>
+                        <div id="checkout-items"></div>
+                        <div class="summary-totals">
+                            <div class="summary-line">
+                                <span data-translate="checkout.subtotal">ราคาสินค้า:</span>
+                                <span id="checkout-subtotal">฿0</span>
+                            </div>
+                            <div class="summary-line">
+                                <span data-translate="checkout.shipping">ค่าจัดส่ง:</span>
+                                <span class="free" data-translate="checkout.freeShipping">ฟรี</span>
+                            </div>
+                            <div class="summary-line total">
+                                <span data-translate="checkout.total">ยอดรวมทั้งสิ้น:</span>
+                                <span id="checkout-total">฿0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large" data-translate="checkout.placeOrder">
+                        สั่งซื้อ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-translate="confirmation.title">ขอบคุณสำหรับคำสั่งซื้อ</h2>
+            </div>
+            
+            <div class="modal-body">
+                <div class="confirmation-content">
+                    <div class="success-icon">✓</div>
+                    <p data-translate="confirmation.message">คำสั่งซื้อของคุณได้รับการยืนยันแล้ว</p>
+                    <div class="order-number">
+                        <span data-translate="confirmation.orderNumber">หมายเลขคำสั่งซื้อ:</span>
+                        <strong id="order-number">AC-202508-001</strong>
+                    </div>
+                    <p data-translate="confirmation.nextSteps">เราจะติดต่อกลับภายใน 24 ชั่วโมง เพื่อยืนยันการสั่งซื้อ</p>
+                    
+                    <div class="order-export">
+                        <button class="btn btn-secondary" id="export-order-btn" data-translate="confirmation.exportOrder">
+                            คัดลอกข้อมูลคำสั่งซื้อ
+                        </button>
+                        <textarea id="order-data" readonly style="display: none;"></textarea>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="continue-shopping" data-translate="confirmation.continueShopping">
+                        เลือกซื้อสินค้าต่อ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Dev Panel (Hidden) -->
+    <div class="dev-panel" id="dev-panel" style="display: none;">
+        <h4>Dev Panel</h4>
+        <button onclick="localStorage.clear(); location.reload();">Clear Storage</button>
+        <button onclick="seedCart();">Seed Cart (2 items)</button>
+        <button onclick="toggleLanguage();">Toggle Language</button>
+        <button onclick="simulateOrder();">Simulate Order</button>
+    </div>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" id="product-schema">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "พัดลมเครื่องบินโดรน",
+        "description": "เย็นได้ทุกที่ ด้วยพลังใบพัดแบบโดรน ลมแรง เงียบ ส่งฟรีทั่วประเทศ",
+        "image": "assets/placeholder-drone-fan.svg",
+        "brand": {
+            "@type": "Brand",
+            "name": "AeroCool"
+        },
+        "sku": "DRONE-FAN-01",
+        "offers": {
+            "@type": "Offer",
+            "price": "1290",
+            "priceCurrency": "THB",
+            "availability": "https://schema.org/InStock",
+            "url": ""
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3"
+        }
+    }
+    </script>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
